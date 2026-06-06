@@ -7,6 +7,7 @@ Dockerizing the service for portability.
 Deploying to a remote Linux server (AWS/DigitalOcean/etc.).
 Automating the build & deploy process with GitHub Actions.
 Managing sensitive values securely via environment variables & GitHub Secrets.
+
 1️⃣ Part 1 — Create the Node.js Service
 1.1 Project Structure
 Dockerized-Service/
@@ -89,8 +90,8 @@ Visit:
 
 http://localhost:3000 → Hello, world!
 http://localhost:3000/secret → prompts for Basic Auth.
-2️⃣ Part 2 — Dockerizing the Node.js Service
 
+2️⃣ Part 2 — Dockerizing the Node.js Service
 2.1 Dockerfile
 FROM node:18
 WORKDIR /app
@@ -103,6 +104,7 @@ CMD ["npm", "start"]
 2.2 Build & Run Locally
 docker build -t node-secret-service .
 docker run --env-file .env -p 3000:3000 node-secret-service
+
 3️⃣ Part 3 — Setup Remote Linux Server
 Example with AWS EC2 (Ubuntu):
 
